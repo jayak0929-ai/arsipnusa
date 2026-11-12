@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173d35">
+  <title>ArsipNusa | Digital Historical Archive</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#beranda"><span class="brand-symbol">A</span><span><b>ArsipNusa</b><small>HISTORICAL ARCHIVE</small></span></a>
+    <div class="side-label">MENU UTAMA</div>
+    <nav class="side-nav">
+      <a class="active" href="#beranda"><span>⌂</span> Dashboard</a>
+      <a href="#arsip"><span>▤</span> Arsip Tokoh</a>
+      <a href="#pesan"><span>⌑</span> Enkripsi Pesan</a>
+      <a href="#tentang"><span>ⓘ</span> Tentang Proyek</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="secure-card"><span class="secure-icon">✦</span><b>Arsip aman, sejarah terjaga.</b><p>Prototipe digital untuk menyimpan catatan sejarah.</p></div>
+      <div class="profile"><div class="avatar">R</div><div><b>RPL Project</b><small>Administrator</small></div><span class="dots">•••</span></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div><span class="breadcrumb">Workspace</span><span class="slash">/</span><b>Dashboard</b></div>
+      <div class="top-actions"><span class="today" id="todayLabel">Digital Archive</span><span class="top-avatar">R</span></div>
+    </header>
+
+    <section class="page-content" id="beranda">
+      <div class="welcome-row">
+        <div><div class="eyebrow">DIGITAL ARCHIVE WORKSPACE</div><h1>Selamat datang di ArsipNusa<span>.</span></h1><p>Kelola arsip tokoh bangsa dan lindungi pesan melalui enkripsi sederhana.</p></div>
+        <a class="button button-dark" href="#arsip">Lihat koleksi <span>↗</span></a>
+      </div>
+
+      <div class="hero-panel">
+        <div class="hero-text"><div class="hero-kicker"><span></span> SEJARAH DALAM GENGGAMAN</div><h2>Merawat ingatan.<br><em>Menjaga kerahasiaan.</em></h2><p>Satu ruang untuk menyimpan informasi tokoh bangsa, menemukan catatan sejarah, dan mempelajari cara kerja pesan terenkripsi.</p><a href="#pesan" class="hero-link">Mulai enkripsi <span>→</span></a></div>
+        <div class="hero-illustration"><div class="circle circle-a"></div><div class="circle circle-b"></div><div class="paper paper-back"></div><div class="paper paper-front"><div class="paper-seal">AN</div><div class="paper-title"></div><div class="paper-line"></div><div class="paper-line long"></div><div class="paper-line"></div><div class="paper-divider"></div><div class="paper-line long"></div><div class="paper-line"></div><div class="paper-sign">ARSIP<br>NASIONAL</div></div><div class="float-chip chip-one">✦ DIGITAL RECORD</div><div class="float-chip chip-two">⌑ ENCRYPTED</div></div>
+      </div>
+
+      <div class="section-title"><div><span class="eyebrow">RINGKASAN SISTEM</span><h2>Ikhtisar arsip</h2></div><span class="updated">PEMBARUAN LANGSUNG</span></div>
+      <div class="stats-grid">
+        <article class="stat-card"><div class="stat-top"><span>Total arsip</span><span class="stat-icon">▤</span></div><strong id="totalArchives">3</strong><small>Catatan tokoh tersimpan</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Kategori</span><span class="stat-icon gold">◈</span></div><strong id="totalCategories">3</strong><small>Kategori koleksi saat ini</small></article>
+        <article class="stat-card"><div class="stat-top"><span>Fitur keamanan</span><span class="stat-icon">⌑</span></div><strong>01</strong><small>Caesar Cipher tersedia</small></article>
+      </div>
+
+      <section class="content-section" id="arsip">
+        <div class="section-title"><div><span class="eyebrow">KOLEKSI PENGETAHUAN</span><h2>Arsip tokoh bangsa</h2><p>Daftar catatan sejarah yang tersimpan dalam ruang arsip digital.</p></div><button class="button button-dark" id="showFormBtn">＋ Tambah arsip</button></div>
+        <div class="toolbar"><label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Cari nama tokoh, kategori, atau catatan..."></label><span class="result-count" id="resultCount">3 catatan</span></div>
+        <form id="archiveForm" class="archive-form hidden">
+          <div class="form-heading"><div><span class="eyebrow">DATA BARU</span><h3>Tambah catatan arsip</h3></div><button type="button" id="closeFormBtn" class="close-btn">×</button></div>
+          <div class="form-grid"><label>Nama tokoh / judul<input id="archiveTitle" required maxlength="80" placeholder="Contoh: Ki Hajar Dewantara"></label><label>Kategori<input id="archiveCategory" maxlength="40" placeholder="Contoh: Pendidikan"></label></div>
+          <label>Ringkasan catatan<textarea id="archiveNote" required rows="3" placeholder="Tuliskan ringkasan informasi sejarah..."></textarea></label>
+          <div class="form-actions"><button type="button" class="button button-light" id="cancelFormBtn">Batal</button><button class="button button-dark" type="submit">Simpan arsip</button></div>
+        </form>
+        <div class="archive-grid" id="archiveGrid"></div>
+        <div class="empty-state hidden" id="emptyState">Tidak ada arsip yang cocok dengan pencarianmu.</div>
+        <p class="footnote">* Data contoh merupakan ringkasan untuk demonstrasi. Pastikan memeriksa sumber sejarah tepercaya sebelum menggunakannya sebagai referensi.</p>
+      </section>
+
+      <section class="cipher-section" id="pesan">
+        <div class="section-title"><div><span class="eyebrow">PERLINDUNGAN INFORMASI</span><h2>Enkripsi pesan rahasia</h2><p>Pelajari proses mengubah pesan menjadi teks sandi dan mengembalikannya.</p></div><span class="security-badge">⌑ CAESAR CIPHER</span></div>
+        <div class="cipher-layout">
+          <div class="cipher-intro"><div class="cipher-symbol">⌑</div><h3>Ubah pesan menjadi sandi.</h3><p>Caesar Cipher menggeser setiap huruf berdasarkan angka yang dipilih. Gunakan angka pergeseran yang sama untuk mengembalikan pesan.</p><div class="notice"><span>ⓘ</span><p><b>Perlu diketahui</b><br>Caesar Cipher adalah metode klasik yang mudah dipecahkan. Fitur ini hanya untuk pembelajaran, bukan untuk mengamankan informasi pribadi atau rahasia sungguhan.</p></div></div>
+          <div class="cipher-card"><div class="card-head"><div><span class="eyebrow">MESSAGE TOOL</span><h3>Text converter</h3></div><span class="mini-lock">⌑</span></div><label class="field-label" for="messageInput">TULIS PESAN</label><textarea id="messageInput" rows="4" placeholder="Ketik pesan yang ingin dienkripsi atau didekripsi..."></textarea><div class="shift-row"><label for="shiftInput">Angka pergeseran</label><input id="shiftInput" type="number" min="1" max="25" value="3"><span>Masukkan angka 1–25</span></div><div class="cipher-buttons"><button class="button button-dark" id="encryptBtn">Enkripsi <span>↗</span></button><button class="button button-light" id="decryptBtn">Dekripsi <span>↙</span></button></div><div class="result-heading"><span>HASIL KONVERSI</span><button id="copyBtn" class="copy-btn">▢ Salin hasil</button></div><div class="result-box" id="resultBox">Hasil enkripsi atau dekripsi akan tampil di sini.</div><p class="status" id="cipherStatus" aria-live="polite"></p></div>
+        </div>
+      </section>
+
+      <section class="about-section" id="tentang"><div class="about-icon">AN</div><div><span class="eyebrow">TENTANG PROYEK RPL</span><h2>Teknologi untuk merawat ingatan.</h2><p>ArsipNusa adalah prototipe aplikasi arsip digital dan enkripsi surat rahasia tokoh bangsa. Proyek ini menampilkan pengelolaan data arsip, pencarian catatan, serta simulasi enkripsi dan dekripsi menggunakan Caesar Cipher.</p></div></section>
+      <footer><span>© 2026 ArsipNusa · Proyek Rekayasa Perangkat Lunak</span><span>Built for learning <b>✦</b></span></footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
