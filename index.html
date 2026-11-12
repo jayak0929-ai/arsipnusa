@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ArsipNusa - Arsip Digital & Enkripsi Surat Rahasia Tokoh Bangsa</title>
-    
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -22,14 +20,9 @@
             }
         }
     </script>
-    
-    <!-- Google Fonts & Lucide Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-
-    <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #FDFBF7; }
-    </style>
+    <style> body { font-family: 'Poppins', sans-serif; background-color: #FDFBF7; } </style>
 </head>
 <body class="text-gray-700 antialiased">
 
@@ -45,13 +38,40 @@
                     <span class="block text-xs text-gray-400">Arsip Digital & Kriptografi Sejarah</span>
                 </div>
             </div>
-            <div class="hidden md:flex items-center space-x-8 font-medium">
-                <a href="#beranda" class="hover:text-deepTosca transition">Beranda</a>
-                <a href="#galeri" class="hover:text-deepTosca transition">Galeri Tokoh</a>
-                <a href="#kriptografi" class="hover:text-deepTosca transition">Simulasi Kriptografi</a>
-            </div>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section id="beranda" class="relative py-20 px-4 overflow-hidden bg-gradient-to-b from-pastel
+    <section class="py-16 px-4 bg-gradient-to-b from-pastelPink/20 to-pastelTosca/20 text-center">
+        <div class="max-w-3xl mx-auto space-y-4">
+            <span class="px-4 py-1.5 rounded-full bg-deepTosca/10 text-deepTosca font-semibold text-sm">Projek RPL • Arsip Digital Nusantara</span>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Menjaga Warisan Bangsa Lewat Teknologi Modern</h1>
+            <p class="text-gray-600 text-sm">Aplikasi web arsip sejarah dan simulasi enkripsi surat rahasia tokoh pergerakan nasional.</p>
+        </div>
+    </section>
+
+    <!-- GALERI FOTO PAHLAWAN -->
+    <section class="py-16 max-w-7xl mx-auto px-4">
+        <div class="text-center space-y-2 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800">Galeri Tokoh Pahlawan Nasional</h2>
+            <p class="text-gray-500 text-sm">Urutan resmi pahlawan pergerakan kemerdekaan Indonesia.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- 1. Ir. Soekarno -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-pastelTosca/30">
+                <div class="h-56 bg-gray-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/President_Sukarno_portrait_%28cropped%29.jpg" alt="Ir. Soekarno" class="w-full h-full object-cover">
+                </div>
+                <div class="p-5 text-center space-y-2">
+                    <h3 class="font-bold text-lg text-gray-800">1. Ir. Soekarno</h3>
+                    <span class="inline-block px-3 py-1 bg-pastelPink/50 text-deepPink rounded-full text-xs font-semibold">Proklamator / Presiden RI I</span>
+                </div>
+            </div>
+
+            <!-- 2. Drs. Mohammad Hatta -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-pastelTosca/30">
+                <div class="h-56 bg-gray-100">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Mohammad_Hatta_portrait_%28cropped%29.jpg" alt="Drs. Mohammad Hatta" class="w-full h-full object-cover">
+                </div>
+                <div class="p-5 text-center
