@@ -1,276 +1,57 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ArsipNusa - Arsip Digital Nusantara</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArsipNusa - Arsip Digital & Enkripsi Surat Rahasia Tokoh Bangsa</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        pastelPink: '#FFD1DC',
+                        deepPink: '#E88B9C',
+                        pastelTosca: '#AFEEEE',
+                        deepTosca: '#4FB9AF',
+                        creamBg: '#FDFBF7'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & Lucide Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
- theme: {
-  extend: {
-   colors: {
-    pastelPink:'#FFD1DC',
-    deepPink:'#E88B9C',
-    pastelTosca:'#AFEEEE',
-    deepTosca:'#4FB9AF',
-    creamBg:'#FDFBF7'
-   }
-  }
- }
-}
-</script>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
-
-<style>
-body {
- font-family:'Poppins',sans-serif;
- background:#FDFBF7;
- scroll-behavior:smooth;
-}
-</style>
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #FDFBF7; }
+    </style>
 </head>
+<body class="text-gray-700 antialiased">
 
-<body class="text-gray-700">
+    <!-- NAVBAR -->
+    <nav class="bg-white/85 backdrop-blur-md sticky top-0 z-50 border-b border-pastelTosca/50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-deepTosca to-pastelTosca flex items-center justify-center text-white shadow-md">
+                    <i data-lucide="book-open" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-deepTosca to-deepPink bg-clip-text text-transparent">ArsipNusa</span>
+                    <span class="block text-xs text-gray-400">Arsip Digital & Kriptografi Sejarah</span>
+                </div>
+            </div>
+            <div class="hidden md:flex items-center space-x-8 font-medium">
+                <a href="#beranda" class="hover:text-deepTosca transition">Beranda</a>
+                <a href="#galeri" class="hover:text-deepTosca transition">Galeri Tokoh</a>
+                <a href="#kriptografi" class="hover:text-deepTosca transition">Simulasi Kriptografi</a>
+            </div>
+        </div>
+    </nav>
 
-<!-- NAVBAR -->
-<nav class="bg-white sticky top-0 z-50 shadow-sm border-b border-teal-100">
-<div class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
-<div class="flex items-center gap-3">
-<div class="bg-teal-500 p-3 rounded-xl text-white">
-<i data-lucide="book-open"></i>
-</div>
-<div>
-<h1 class="font-bold text-xl text-teal-600">ArsipNusa</h1>
-<p class="text-xs text-gray-400">Arsip Digital Nusantara</p>
-</div>
-</div>
-
-<div class="hidden md:flex gap-7 font-medium">
-<a href="#beranda">Beranda</a>
-<a href="#galeri">Galeri Tokoh</a>
-<a href="#kriptografi">Kriptografi</a>
-<a href="#tentang">Tentang</a>
-</div>
-</div>
-</nav>
-
-<!-- HERO -->
-<section id="beranda" class="py-20 px-5 bg-gradient-to-br from-pink-100 to-teal-50">
-<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-
-<div>
-<span class="bg-white px-4 py-2 rounded-full text-teal-600 text-sm">
-Projek RPL • Arsip Digital Nusantara
-</span>
-
-<h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-6 leading-tight">
-Menjaga Warisan Bangsa Lewat
-<span class="text-teal-600">Teknologi Modern</span>
-</h2>
-
-<p class="mt-5 text-gray-600 leading-relaxed">
-ArsipNusa merupakan website arsip sejarah yang menyimpan informasi tokoh nasional serta menyediakan simulasi enkripsi dan dekripsi untuk mengenalkan teknologi keamanan informasi.
-</p>
-
-<div class="flex flex-wrap gap-3 mt-7">
-<a href="#galeri" class="bg-teal-500 text-white px-6 py-3 rounded-xl">Jelajahi Tokoh</a>
-<a href="#kriptografi" class="bg-white text-pink-500 border border-pink-300 px-6 py-3 rounded-xl">Coba Enkripsi</a>
-</div>
-</div>
-
-<div class="bg-white p-7 rounded-3xl shadow-lg text-center">
-<img src="soekarno.jpg" alt="Ir. Soekarno" class="w-36 h-36 object-cover rounded-full mx-auto border-4 border-pink-200">
-<h3 class="font-bold text-xl mt-4">Ir. Soekarno</h3>
-<p class="text-sm text-gray-500 mt-2">Presiden pertama Republik Indonesia dan tokoh proklamator kemerdekaan.</p>
-</div>
-
-</div>
-</section>
-
-<!-- GALERI -->
-<section id="galeri" class="py-20 px-5 max-w-7xl mx-auto">
-
-<div class="text-center mb-12">
-<h2 class="text-3xl font-bold text-gray-800">Galeri Tokoh Pahlawan Nasional</h2>
-<p class="text-gray-500 mt-3">Mengenal tokoh-tokoh penting dalam sejarah Indonesia.</p>
-</div>
-
-<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
-
-<div class="bg-white rounded-2xl shadow-md overflow-hidden">
-<img src="soekarno.jpg" alt="Soekarno" class="w-full h-56 object-cover">
-<div class="p-5">
-<h3 class="font-bold text-lg">Ir. Soekarno</h3>
-<p class="text-sm text-gray-500 mt-2">Proklamator dan Presiden pertama Republik Indonesia.</p>
-</div>
-</div>
-
-<div class="bg-white rounded-2xl shadow-md overflow-hidden">
-<img src="hatta.jpg" alt="Mohammad Hatta" class="w-full h-56 object-cover">
-<div class="p-5">
-<h3 class="font-bold text-lg">Mohammad Hatta</h3>
-<p class="text-sm text-gray-500 mt-2">Wakil presiden pertama dan tokoh proklamator kemerdekaan.</p>
-</div>
-</div>
-
-<div class="bg-white rounded-2xl shadow-md overflow-hidden">
-<img src="kartini.jpg" alt="R.A. Kartini" class="w-full h-56 object-cover">
-<div class="p-5">
-<h3 class="font-bold text-lg">R.A. Kartini</h3>
-<p class="text-sm text-gray-500 mt-2">Tokoh emansipasi perempuan dan pendidikan.</p>
-</div>
-</div>
-
-<div class="bg-white rounded-2xl shadow-md overflow-hidden">
-<img src="sudirman.jpg" alt="Jenderal Sudirman" class="w-full h-56 object-cover">
-<div class="p-5">
-<h3 class="font-bold text-lg">Jenderal Sudirman</h3>
-<p class="text-sm text-gray-500 mt-2">Panglima Besar TNI yang berperan dalam perjuangan kemerdekaan.</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- KRIPTOGRAFI -->
-<section id="kriptografi" class="py-20 px-5 bg-teal-50">
-<div class="max-w-3xl mx-auto">
-
-<div class="text-center mb-10">
-<h2 class="text-3xl font-bold text-gray-800">Simulasi Kriptografi</h2>
-<p class="text-gray-500 mt-3">Coba mengenal proses enkripsi dan dekripsi pesan.</p>
-</div>
-
-<div class="bg-white p-7 rounded-3xl shadow-lg">
-
-<label class="font-semibold">Masukkan Pesan</label>
-<textarea id="pesan" rows="4" placeholder="Tuliskan pesan di sini..." class="w-full border border-gray-200 rounded-xl p-4 mt-2 focus:outline-none focus:border-teal-400"></textarea>
-
-<label class="font-semibold block mt-5">Kunci Angka (1-25)</label>
-<input id="kunci" type="number" min="1" max="25" value="3" class="w-full border border-gray-200 rounded-xl p-3 mt-2">
-
-<div class="grid grid-cols-2 gap-3 mt-6">
-<button onclick="enkripsi()" class="bg-teal-500 text-white p-3 rounded-xl hover:bg-teal-600">Enkripsi</button>
-<button onclick="dekripsi()" class="bg-pink-400 text-white p-3 rounded-xl hover:bg-pink-500">Dekripsi</button>
-</div>
-
-<div class="mt-6">
-<label class="font-semibold">Hasil Pesan</label>
-<textarea id="hasil" rows="4" readonly class="w-full bg-gray-50 border rounded-xl p-4 mt-2" placeholder="Hasil akan muncul di sini..."></textarea>
-</div>
-
-<button onclick="salinHasil()" class="mt-4 text-teal-600 font-medium">Salin Hasil</button>
-
-<p id="status" class="text-sm text-gray-500 mt-3"></p>
-</div>
-
-<p class="text-xs text-gray-500 mt-4 text-center">
-Simulasi menggunakan metode Caesar Cipher untuk pembelajaran, bukan untuk mengamankan pesan rahasia sungguhan.
-</p>
-
-</div>
-</section>
-
-<!-- TENTANG -->
-<section id="tentang" class="py-20 px-5">
-<div class="max-w-4xl mx-auto text-center">
-<h2 class="text-3xl font-bold">Tentang ArsipNusa</h2>
-<p class="text-gray-600 mt-5 leading-relaxed">
-ArsipNusa dibuat sebagai projek Rekayasa Perangkat Lunak (RPL) yang bertujuan mengenalkan sejarah tokoh bangsa melalui media digital serta memberikan pemahaman dasar mengenai kriptografi.
-</p>
-
-<div class="grid sm:grid-cols-3 gap-5 mt-10">
-<div class="bg-pink-50 p-6 rounded-2xl">
-<i data-lucide="book-open" class="mx-auto text-pink-500"></i>
-<h3 class="font-bold mt-3">Arsip Sejarah</h3>
-<p class="text-sm mt-2">Informasi tokoh nasional.</p>
-</div>
-
-<div class="bg-teal-50 p-6 rounded-2xl">
-<i data-lucide="lock" class="mx-auto text-teal-500"></i>
-<h3 class="font-bold mt-3">Kriptografi</h3>
-<p class="text-sm mt-2">Simulasi enkripsi pesan.</p>
-</div>
-
-<div class="bg-pink-50 p-6 rounded-2xl">
-<i data-lucide="monitor-smartphone" class="mx-auto text-pink-500"></i>
-<h3 class="font-bold mt-3">Teknologi</h3>
-<p class="text-sm mt-2">Belajar melalui website.</p>
-</div>
-</div>
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-gray-800 text-white py-8 px-5 text-center">
-<h2 class="text-xl font-bold text-teal-300">ArsipNusa</h2>
-<p class="text-sm text-gray-300 mt-2">Melestarikan Sejarah, Mengembangkan Teknologi.</p>
-<p class="text-xs text-gray-400 mt-5">© 2026 ArsipNusa. Projek RPL.</p>
-</footer>
-
-<script>
-function proses(teks, kunci) {
- return teks.replace(/[a-z]/gi, function(huruf) {
-  const awal = huruf === huruf.toUpperCase() ? 65 : 97;
-  return String.fromCharCode(
-   (huruf.charCodeAt(0) - awal + kunci + 26) % 26 + awal
-  );
- });
-}
-
-function ambilKunci() {
- const nilai = Number(document.getElementById("kunci").value);
- if (!Number.isInteger(nilai) || nilai < 1 || nilai > 25) {
-  document.getElementById("status").textContent = "Masukkan kunci angka 1 sampai 25.";
-  return null;
- }
- return nilai;
-}
-
-function enkripsi() {
- const k = ambilKunci();
- if (k === null) return;
- const pesan = document.getElementById("pesan").value;
- document.getElementById("hasil").value = proses(pesan, k);
- document.getElementById("status").textContent = "Pesan berhasil dienkripsi.";
-}
-
-function dekripsi() {
- const k = ambilKunci();
- if (k === null) return;
- const pesan = document.getElementById("pesan").value;
- document.getElementById("hasil").value = proses(pesan, -k);
- document.getElementById("status").textContent = "Pesan berhasil didekripsi.";
-}
-
-function salinHasil() {
- const hasil = document.getElementById("hasil");
- if (!hasil.value) {
-  document.getElementById("status").textContent = "Belum ada hasil untuk disalin.";
-  return;
- }
- if (navigator.clipboard && window.isSecureContext) {
-  navigator.clipboard.writeText(hasil.value).then(() => {
-   document.getElementById("status").textContent = "Hasil berhasil disalin.";
-  }).catch(() => {
-   hasil.select();
-   document.execCommand("copy");
-   document.getElementById("status").textContent = "Silakan periksa hasil salinan.";
-  });
- } else {
-  hasil.select();
-  document.execCommand("copy");
-  document.getElementById("status").textContent = "Silakan periksa hasil salinan.";
- }
-}
-
-lucide.createIcons();
-</script>
-
-</body>
-</html>
+    <!-- HERO SECTION -->
+    <section id="beranda" class="relative py-20 px-4 overflow-hidden bg-gradient-to-b from-pastel
