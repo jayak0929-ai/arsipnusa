@@ -1,78 +1,276 @@
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#173d35">
-  <title>ArsipNusa | Digital Historical Archive</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArsipNusa - Arsip Digital Nusantara</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+ theme: {
+  extend: {
+   colors: {
+    pastelPink:'#FFD1DC',
+    deepPink:'#E88B9C',
+    pastelTosca:'#AFEEEE',
+    deepTosca:'#4FB9AF',
+    creamBg:'#FDFBF7'
+   }
+  }
+ }
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+body {
+ font-family:'Poppins',sans-serif;
+ background:#FDFBF7;
+ scroll-behavior:smooth;
+}
+</style>
 </head>
-<body>
-  <aside class="sidebar">
-    <a class="brand" href="#beranda"><span class="brand-symbol">A</span><span><b>ArsipNusa</b><small>HISTORICAL ARCHIVE</small></span></a>
-    <div class="side-label">MENU UTAMA</div>
-    <nav class="side-nav">
-      <a class="active" href="#beranda"><span>⌂</span> Dashboard</a>
-      <a href="#arsip"><span>▤</span> Arsip Tokoh</a>
-      <a href="#pesan"><span>⌑</span> Enkripsi Pesan</a>
-      <a href="#tentang"><span>ⓘ</span> Tentang Proyek</a>
-    </nav>
-    <div class="sidebar-bottom">
-      <div class="secure-card"><span class="secure-icon">✦</span><b>Arsip aman, sejarah terjaga.</b><p>Prototipe digital untuk menyimpan catatan sejarah.</p></div>
-      <div class="profile"><div class="avatar">R</div><div><b>RPL Project</b><small>Administrator</small></div><span class="dots">•••</span></div>
-    </div>
-  </aside>
 
-  <main class="main">
-    <header class="topbar">
-      <div><span class="breadcrumb">Workspace</span><span class="slash">/</span><b>Dashboard</b></div>
-      <div class="top-actions"><span class="today" id="todayLabel">Digital Archive</span><span class="top-avatar">R</span></div>
-    </header>
+<body class="text-gray-700">
 
-    <section class="page-content" id="beranda">
-      <div class="welcome-row">
-        <div><div class="eyebrow">DIGITAL ARCHIVE WORKSPACE</div><h1>Selamat datang di ArsipNusa<span>.</span></h1><p>Kelola arsip tokoh bangsa dan lindungi pesan melalui enkripsi sederhana.</p></div>
-        <a class="button button-dark" href="#arsip">Lihat koleksi <span>↗</span></a>
-      </div>
+<!-- NAVBAR -->
+<nav class="bg-white sticky top-0 z-50 shadow-sm border-b border-teal-100">
+<div class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="bg-teal-500 p-3 rounded-xl text-white">
+<i data-lucide="book-open"></i>
+</div>
+<div>
+<h1 class="font-bold text-xl text-teal-600">ArsipNusa</h1>
+<p class="text-xs text-gray-400">Arsip Digital Nusantara</p>
+</div>
+</div>
 
-      <div class="hero-panel">
-        <div class="hero-text"><div class="hero-kicker"><span></span> SEJARAH DALAM GENGGAMAN</div><h2>Merawat ingatan.<br><em>Menjaga kerahasiaan.</em></h2><p>Satu ruang untuk menyimpan informasi tokoh bangsa, menemukan catatan sejarah, dan mempelajari cara kerja pesan terenkripsi.</p><a href="#pesan" class="hero-link">Mulai enkripsi <span>→</span></a></div>
-        <div class="hero-illustration"><div class="circle circle-a"></div><div class="circle circle-b"></div><div class="paper paper-back"></div><div class="paper paper-front"><div class="paper-seal">AN</div><div class="paper-title"></div><div class="paper-line"></div><div class="paper-line long"></div><div class="paper-line"></div><div class="paper-divider"></div><div class="paper-line long"></div><div class="paper-line"></div><div class="paper-sign">ARSIP<br>NASIONAL</div></div><div class="float-chip chip-one">✦ DIGITAL RECORD</div><div class="float-chip chip-two">⌑ ENCRYPTED</div></div>
-      </div>
+<div class="hidden md:flex gap-7 font-medium">
+<a href="#beranda">Beranda</a>
+<a href="#galeri">Galeri Tokoh</a>
+<a href="#kriptografi">Kriptografi</a>
+<a href="#tentang">Tentang</a>
+</div>
+</div>
+</nav>
 
-      <div class="section-title"><div><span class="eyebrow">RINGKASAN SISTEM</span><h2>Ikhtisar arsip</h2></div><span class="updated">PEMBARUAN LANGSUNG</span></div>
-      <div class="stats-grid">
-        <article class="stat-card"><div class="stat-top"><span>Total arsip</span><span class="stat-icon">▤</span></div><strong id="totalArchives">3</strong><small>Catatan tokoh tersimpan</small></article>
-        <article class="stat-card"><div class="stat-top"><span>Kategori</span><span class="stat-icon gold">◈</span></div><strong id="totalCategories">3</strong><small>Kategori koleksi saat ini</small></article>
-        <article class="stat-card"><div class="stat-top"><span>Fitur keamanan</span><span class="stat-icon">⌑</span></div><strong>01</strong><small>Caesar Cipher tersedia</small></article>
-      </div>
+<!-- HERO -->
+<section id="beranda" class="py-20 px-5 bg-gradient-to-br from-pink-100 to-teal-50">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
 
-      <section class="content-section" id="arsip">
-        <div class="section-title"><div><span class="eyebrow">KOLEKSI PENGETAHUAN</span><h2>Arsip tokoh bangsa</h2><p>Daftar catatan sejarah yang tersimpan dalam ruang arsip digital.</p></div><button class="button button-dark" id="showFormBtn">＋ Tambah arsip</button></div>
-        <div class="toolbar"><label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Cari nama tokoh, kategori, atau catatan..."></label><span class="result-count" id="resultCount">3 catatan</span></div>
-        <form id="archiveForm" class="archive-form hidden">
-          <div class="form-heading"><div><span class="eyebrow">DATA BARU</span><h3>Tambah catatan arsip</h3></div><button type="button" id="closeFormBtn" class="close-btn">×</button></div>
-          <div class="form-grid"><label>Nama tokoh / judul<input id="archiveTitle" required maxlength="80" placeholder="Contoh: Ki Hajar Dewantara"></label><label>Kategori<input id="archiveCategory" maxlength="40" placeholder="Contoh: Pendidikan"></label></div>
-          <label>Ringkasan catatan<textarea id="archiveNote" required rows="3" placeholder="Tuliskan ringkasan informasi sejarah..."></textarea></label>
-          <div class="form-actions"><button type="button" class="button button-light" id="cancelFormBtn">Batal</button><button class="button button-dark" type="submit">Simpan arsip</button></div>
-        </form>
-        <div class="archive-grid" id="archiveGrid"></div>
-        <div class="empty-state hidden" id="emptyState">Tidak ada arsip yang cocok dengan pencarianmu.</div>
-        <p class="footnote">* Data contoh merupakan ringkasan untuk demonstrasi. Pastikan memeriksa sumber sejarah tepercaya sebelum menggunakannya sebagai referensi.</p>
-      </section>
+<div>
+<span class="bg-white px-4 py-2 rounded-full text-teal-600 text-sm">
+Projek RPL • Arsip Digital Nusantara
+</span>
 
-      <section class="cipher-section" id="pesan">
-        <div class="section-title"><div><span class="eyebrow">PERLINDUNGAN INFORMASI</span><h2>Enkripsi pesan rahasia</h2><p>Pelajari proses mengubah pesan menjadi teks sandi dan mengembalikannya.</p></div><span class="security-badge">⌑ CAESAR CIPHER</span></div>
-        <div class="cipher-layout">
-          <div class="cipher-intro"><div class="cipher-symbol">⌑</div><h3>Ubah pesan menjadi sandi.</h3><p>Caesar Cipher menggeser setiap huruf berdasarkan angka yang dipilih. Gunakan angka pergeseran yang sama untuk mengembalikan pesan.</p><div class="notice"><span>ⓘ</span><p><b>Perlu diketahui</b><br>Caesar Cipher adalah metode klasik yang mudah dipecahkan. Fitur ini hanya untuk pembelajaran, bukan untuk mengamankan informasi pribadi atau rahasia sungguhan.</p></div></div>
-          <div class="cipher-card"><div class="card-head"><div><span class="eyebrow">MESSAGE TOOL</span><h3>Text converter</h3></div><span class="mini-lock">⌑</span></div><label class="field-label" for="messageInput">TULIS PESAN</label><textarea id="messageInput" rows="4" placeholder="Ketik pesan yang ingin dienkripsi atau didekripsi..."></textarea><div class="shift-row"><label for="shiftInput">Angka pergeseran</label><input id="shiftInput" type="number" min="1" max="25" value="3"><span>Masukkan angka 1–25</span></div><div class="cipher-buttons"><button class="button button-dark" id="encryptBtn">Enkripsi <span>↗</span></button><button class="button button-light" id="decryptBtn">Dekripsi <span>↙</span></button></div><div class="result-heading"><span>HASIL KONVERSI</span><button id="copyBtn" class="copy-btn">▢ Salin hasil</button></div><div class="result-box" id="resultBox">Hasil enkripsi atau dekripsi akan tampil di sini.</div><p class="status" id="cipherStatus" aria-live="polite"></p></div>
-        </div>
-      </section>
+<h2 class="text-4xl md:text-5xl font-bold text-gray-800 mt-6 leading-tight">
+Menjaga Warisan Bangsa Lewat
+<span class="text-teal-600">Teknologi Modern</span>
+</h2>
 
-      <section class="about-section" id="tentang"><div class="about-icon">AN</div><div><span class="eyebrow">TENTANG PROYEK RPL</span><h2>Teknologi untuk merawat ingatan.</h2><p>ArsipNusa adalah prototipe aplikasi arsip digital dan enkripsi surat rahasia tokoh bangsa. Proyek ini menampilkan pengelolaan data arsip, pencarian catatan, serta simulasi enkripsi dan dekripsi menggunakan Caesar Cipher.</p></div></section>
-      <footer><span>© 2026 ArsipNusa · Proyek Rekayasa Perangkat Lunak</span><span>Built for learning <b>✦</b></span></footer>
-    </section>
-  </main>
-  <script src="script.js"></script>
+<p class="mt-5 text-gray-600 leading-relaxed">
+ArsipNusa merupakan website arsip sejarah yang menyimpan informasi tokoh nasional serta menyediakan simulasi enkripsi dan dekripsi untuk mengenalkan teknologi keamanan informasi.
+</p>
+
+<div class="flex flex-wrap gap-3 mt-7">
+<a href="#galeri" class="bg-teal-500 text-white px-6 py-3 rounded-xl">Jelajahi Tokoh</a>
+<a href="#kriptografi" class="bg-white text-pink-500 border border-pink-300 px-6 py-3 rounded-xl">Coba Enkripsi</a>
+</div>
+</div>
+
+<div class="bg-white p-7 rounded-3xl shadow-lg text-center">
+<img src="soekarno.jpg" alt="Ir. Soekarno" class="w-36 h-36 object-cover rounded-full mx-auto border-4 border-pink-200">
+<h3 class="font-bold text-xl mt-4">Ir. Soekarno</h3>
+<p class="text-sm text-gray-500 mt-2">Presiden pertama Republik Indonesia dan tokoh proklamator kemerdekaan.</p>
+</div>
+
+</div>
+</section>
+
+<!-- GALERI -->
+<section id="galeri" class="py-20 px-5 max-w-7xl mx-auto">
+
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-800">Galeri Tokoh Pahlawan Nasional</h2>
+<p class="text-gray-500 mt-3">Mengenal tokoh-tokoh penting dalam sejarah Indonesia.</p>
+</div>
+
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-7">
+
+<div class="bg-white rounded-2xl shadow-md overflow-hidden">
+<img src="soekarno.jpg" alt="Soekarno" class="w-full h-56 object-cover">
+<div class="p-5">
+<h3 class="font-bold text-lg">Ir. Soekarno</h3>
+<p class="text-sm text-gray-500 mt-2">Proklamator dan Presiden pertama Republik Indonesia.</p>
+</div>
+</div>
+
+<div class="bg-white rounded-2xl shadow-md overflow-hidden">
+<img src="hatta.jpg" alt="Mohammad Hatta" class="w-full h-56 object-cover">
+<div class="p-5">
+<h3 class="font-bold text-lg">Mohammad Hatta</h3>
+<p class="text-sm text-gray-500 mt-2">Wakil presiden pertama dan tokoh proklamator kemerdekaan.</p>
+</div>
+</div>
+
+<div class="bg-white rounded-2xl shadow-md overflow-hidden">
+<img src="kartini.jpg" alt="R.A. Kartini" class="w-full h-56 object-cover">
+<div class="p-5">
+<h3 class="font-bold text-lg">R.A. Kartini</h3>
+<p class="text-sm text-gray-500 mt-2">Tokoh emansipasi perempuan dan pendidikan.</p>
+</div>
+</div>
+
+<div class="bg-white rounded-2xl shadow-md overflow-hidden">
+<img src="sudirman.jpg" alt="Jenderal Sudirman" class="w-full h-56 object-cover">
+<div class="p-5">
+<h3 class="font-bold text-lg">Jenderal Sudirman</h3>
+<p class="text-sm text-gray-500 mt-2">Panglima Besar TNI yang berperan dalam perjuangan kemerdekaan.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- KRIPTOGRAFI -->
+<section id="kriptografi" class="py-20 px-5 bg-teal-50">
+<div class="max-w-3xl mx-auto">
+
+<div class="text-center mb-10">
+<h2 class="text-3xl font-bold text-gray-800">Simulasi Kriptografi</h2>
+<p class="text-gray-500 mt-3">Coba mengenal proses enkripsi dan dekripsi pesan.</p>
+</div>
+
+<div class="bg-white p-7 rounded-3xl shadow-lg">
+
+<label class="font-semibold">Masukkan Pesan</label>
+<textarea id="pesan" rows="4" placeholder="Tuliskan pesan di sini..." class="w-full border border-gray-200 rounded-xl p-4 mt-2 focus:outline-none focus:border-teal-400"></textarea>
+
+<label class="font-semibold block mt-5">Kunci Angka (1-25)</label>
+<input id="kunci" type="number" min="1" max="25" value="3" class="w-full border border-gray-200 rounded-xl p-3 mt-2">
+
+<div class="grid grid-cols-2 gap-3 mt-6">
+<button onclick="enkripsi()" class="bg-teal-500 text-white p-3 rounded-xl hover:bg-teal-600">Enkripsi</button>
+<button onclick="dekripsi()" class="bg-pink-400 text-white p-3 rounded-xl hover:bg-pink-500">Dekripsi</button>
+</div>
+
+<div class="mt-6">
+<label class="font-semibold">Hasil Pesan</label>
+<textarea id="hasil" rows="4" readonly class="w-full bg-gray-50 border rounded-xl p-4 mt-2" placeholder="Hasil akan muncul di sini..."></textarea>
+</div>
+
+<button onclick="salinHasil()" class="mt-4 text-teal-600 font-medium">Salin Hasil</button>
+
+<p id="status" class="text-sm text-gray-500 mt-3"></p>
+</div>
+
+<p class="text-xs text-gray-500 mt-4 text-center">
+Simulasi menggunakan metode Caesar Cipher untuk pembelajaran, bukan untuk mengamankan pesan rahasia sungguhan.
+</p>
+
+</div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang" class="py-20 px-5">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-3xl font-bold">Tentang ArsipNusa</h2>
+<p class="text-gray-600 mt-5 leading-relaxed">
+ArsipNusa dibuat sebagai projek Rekayasa Perangkat Lunak (RPL) yang bertujuan mengenalkan sejarah tokoh bangsa melalui media digital serta memberikan pemahaman dasar mengenai kriptografi.
+</p>
+
+<div class="grid sm:grid-cols-3 gap-5 mt-10">
+<div class="bg-pink-50 p-6 rounded-2xl">
+<i data-lucide="book-open" class="mx-auto text-pink-500"></i>
+<h3 class="font-bold mt-3">Arsip Sejarah</h3>
+<p class="text-sm mt-2">Informasi tokoh nasional.</p>
+</div>
+
+<div class="bg-teal-50 p-6 rounded-2xl">
+<i data-lucide="lock" class="mx-auto text-teal-500"></i>
+<h3 class="font-bold mt-3">Kriptografi</h3>
+<p class="text-sm mt-2">Simulasi enkripsi pesan.</p>
+</div>
+
+<div class="bg-pink-50 p-6 rounded-2xl">
+<i data-lucide="monitor-smartphone" class="mx-auto text-pink-500"></i>
+<h3 class="font-bold mt-3">Teknologi</h3>
+<p class="text-sm mt-2">Belajar melalui website.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gray-800 text-white py-8 px-5 text-center">
+<h2 class="text-xl font-bold text-teal-300">ArsipNusa</h2>
+<p class="text-sm text-gray-300 mt-2">Melestarikan Sejarah, Mengembangkan Teknologi.</p>
+<p class="text-xs text-gray-400 mt-5">© 2026 ArsipNusa. Projek RPL.</p>
+</footer>
+
+<script>
+function proses(teks, kunci) {
+ return teks.replace(/[a-z]/gi, function(huruf) {
+  const awal = huruf === huruf.toUpperCase() ? 65 : 97;
+  return String.fromCharCode(
+   (huruf.charCodeAt(0) - awal + kunci + 26) % 26 + awal
+  );
+ });
+}
+
+function ambilKunci() {
+ const nilai = Number(document.getElementById("kunci").value);
+ if (!Number.isInteger(nilai) || nilai < 1 || nilai > 25) {
+  document.getElementById("status").textContent = "Masukkan kunci angka 1 sampai 25.";
+  return null;
+ }
+ return nilai;
+}
+
+function enkripsi() {
+ const k = ambilKunci();
+ if (k === null) return;
+ const pesan = document.getElementById("pesan").value;
+ document.getElementById("hasil").value = proses(pesan, k);
+ document.getElementById("status").textContent = "Pesan berhasil dienkripsi.";
+}
+
+function dekripsi() {
+ const k = ambilKunci();
+ if (k === null) return;
+ const pesan = document.getElementById("pesan").value;
+ document.getElementById("hasil").value = proses(pesan, -k);
+ document.getElementById("status").textContent = "Pesan berhasil didekripsi.";
+}
+
+function salinHasil() {
+ const hasil = document.getElementById("hasil");
+ if (!hasil.value) {
+  document.getElementById("status").textContent = "Belum ada hasil untuk disalin.";
+  return;
+ }
+ if (navigator.clipboard && window.isSecureContext) {
+  navigator.clipboard.writeText(hasil.value).then(() => {
+   document.getElementById("status").textContent = "Hasil berhasil disalin.";
+  }).catch(() => {
+   hasil.select();
+   document.execCommand("copy");
+   document.getElementById("status").textContent = "Silakan periksa hasil salinan.";
+  });
+ } else {
+  hasil.select();
+  document.execCommand("copy");
+  document.getElementById("status").textContent = "Silakan periksa hasil salinan.";
+ }
+}
+
+lucide.createIcons();
+</script>
+
 </body>
 </html>
